@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+.header{
+    position: fixed;
+    top: 5%;
+    left: 20%;
+    padding: 10px; 
+  }
+
+h1{
+    font-size: 60px;
+    color: #4A8059;
+    font-family: serif;
+}
+
+h3{
+    color: black;
+    font-family: serif;
+    position: fixed;
+    top: 5%;
+    right: 20%;
+    padding: 10px;
+}
+
+
+.line {
+    position: absolute;
+    top: 25%; /* 헤더 아래에 가로선 생성 */
+    width: 60%;
+    height: 1px;
+    background-color: black;
+    margin: 0 auto;
+}
