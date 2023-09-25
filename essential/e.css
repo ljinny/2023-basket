@@ -38,3 +38,97 @@ h3{
     background-color: black;
     margin: 0 auto;
 }
+
+.es-box {
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+.es-input-box {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  border-bottom: 1px solid #ddd; 
+  justify-content: flex-start;
+  align-items: center;
+  width: 600px;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+}
+
+.buy-all-btn {
+  color: gray;
+  min-width: none;
+  min-height: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0.5rem 0.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  
+}
+
+.es-input {
+  width: 80%;
+  text-align: center;
+  border: 0;
+  outline: none;
+  font-size: 1.3rem;
+}
+
+.es-item {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.es-item:hover .delBtn {
+  opacity: 1;
+}
+
+.checkbox {
+  min-width: none;
+  min-height: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0.5rem 0.5rem;
+  border-radius: 50px;
+  border: 1px solid lightgray;
+  cursor: pointer;
+  text-align: center;
+}
+
+.es-item.checked .checkbox{
+  border: 2px solid darkgray;
+  color: green;
+}
+
+.ess {
+  font-size: 1.3rem;
+  padding: 0 1rem;
+  width: 80%;
+}
+
+.es-item.checked .ess{
+font-style: italic;
+text-decoration: line-through;
+color: lightgray;
+}
+
+.delBtn {
+  opacity: 1;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  cursor: pointer;
+}
