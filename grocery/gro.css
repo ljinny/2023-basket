@@ -1,0 +1,142 @@
+.header{
+    position: absolute;
+    top: 30px;
+    left: 5%;
+    padding: 10px; 
+  }
+
+h1{
+    font-size: 60px;
+    color: #4A8059;
+    font-family: serif;
+}
+
+.line {
+    position: absolute;
+    top: 170px; /* 헤더 아래에 가로선 생성 */
+    width: 90%;
+    height: 0.5px;
+    background-color: black;
+    margin-left: 5%;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-top: 150px;
+    margin-left: 10%;
+    padding-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+
+.buylist {
+    position: absolute;
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 10%;
+    background-color: #FFF8ED;
+    border-radius: 20px;
+    overflow: hidden; 
+}
+
+.gro-input-box {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    height: 3rem;
+    border-bottom: 1px solid #ddd;
+    justify-content: center; /* Change from flex-start to center */
+    align-items: center;
+    width: 50%;
+    margin: 0 auto; /* Add margin and set auto to center horizontally */
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+}
+
+.buy-all-btn{
+    color: gray;
+    min-width: none;
+    min-height: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0.5rem 0.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.buy-all-btn.checked {
+    color: #4A8059;
+}
+
+.gro-input {
+    width: 80%;
+    text-align: center;
+    border: 0;
+    outline: none;
+    font-size: 1.3rem;
+}
+  
+.gro-item {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box; 
+}
+
+.gro-item:hover .delBtn {
+    opacity: 1;
+}
+
+.checkbox {
+    min-width: none;
+    min-height: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0.5rem 0.5rem;
+    border-radius: 50px;
+    border: 1px solid lightgray;
+    cursor: pointer;
+    text-align: center;
+}
+
+.gro-item.checked .checkbox{
+    border: 2px solid darkgray;
+    color: green;
+}
+
+.gro {
+    font-size: 1.3rem;
+    padding: 0 1rem;
+    width: 80%;
+ }
+  
+.gro-item.checked .gro{
+    font-style: italic;
+    text-decoration: line-through;
+    color: lightgray;
+}
+
+.delBtn {
+    opacity: 1;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    cursor: pointer;
+  }

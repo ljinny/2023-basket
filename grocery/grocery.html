@@ -5,15 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>grocery</title>
-    <link rel="stylesheet" href="g.css">
+    <link rel="stylesheet" href="../menu.css">
+    <link rel="stylesheet" href="gro.css">
 </head>
-<body>
+<body topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" style="background-color:#F6F6F6"> 
+    <nav class="clearfix"> 
+        <div class="menu" ></div>
+            <ul class="clearfix">
+            <li id="basket"><a href="../index.html">basket</a></li>
+            <li><a href="../clothes/clothes.html">clothes</a></li>
+            <li><a href="../grocery/grocery.html">grocery</a></li>
+            <li><a href="../essential/essential.html">essential</a></li>
+            </ul>
+        </div>      
+    </nav>
     <div class="header">
         <h1>grocery</h1>
     </div>
     <div class="line"></div>
-    <a href="../index.html">
-        <h3>home</h3>
-    </a>
+
+    <div class="menu">
+        <table id="mealTable">
+            <tr>
+                <td></td>
+                <td>breakfast</td>
+                <td>launch</td>
+                <td>dinner</td>
+            </tr>
+            <tr>
+                <td> Mon </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td> Tue </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td> Wed </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td> Thur </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td> Fri </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td> Sat </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td> Sun </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="buylist">
+        <div class="gro-input-box">
+            <button class="buy-btn">✔</button>
+            <input type="text" class="gro-input" placeholder="Add grocery">
+        </div>
+        <ul class="gro-list"></ul>
+    </div>
+
+    <script src="gro.js"></script>
 </body>
 </html>

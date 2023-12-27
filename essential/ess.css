@@ -1,0 +1,22 @@
+.header{
+    position: absolute;
+    top: 30px;
+    left: 5%;
+    padding: 10px; 
+  }
+
+h1{
+    font-size: 60px;
+    color: #4A8059;
+    font-family: serif;
+}
+
+.line {
+    position: absolute;
+    top: 170px; /* 헤더 아래에 가로선 생성 */
+    width: 90%;
+    height: 0.5px;
+    background-color: black;
+    margin-left: 5%;
+}
+
