@@ -16,7 +16,143 @@ h1{
     top: 170px; /* 헤더 아래에 가로선 생성 */
     width: 90%;
     height: 0.5px;
-    background-color: black;
     margin-left: 5%;
+}
+
+
+#todolist {
+  text-align: left;
+  max-width: 550px;
+  margin-top: 170px;
+  margin-left: 200px;
+
+}
+
+.main__title {
+  margin: 0px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  text-align: center;
+}
+
+.main__title h2 {
+  margin-bottom: 5px;
+  color: #4A8059;
+}
+
+.input__section {
+  margin: auto;
+}
+
+.input__section form {
+  margin: 0px 70px 5px 70px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  width: 300px;
+  height: 30px;
+  border-radius: 15px;
+  padding: 0px 30px;
+}
+
+*:focus {
+  outline: none;
+}
+
+.input__button {
+  font-size: 30px;
+  line-height: 60px;
+  margin-left: 5px;
+  border: 0;
+  background-color: #F6F6F6;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 110px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+ul li:hover {
+  background: #ddd;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  align-items: center;
+  text-align: center;
+  margin: 8px 60px;
+  padding: 4px 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0);
+}
+.close:hover {
+  border-radius: 100%;
+  color: white;
+}
+
+ul li.checked {
+  color: #4A8059;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  content: "";
+  position: absolute;
+  border-color: #4A8059;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 13px;
+  left: 80px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    margin: 0;
+  }
+  #todolist {
+    max-width: 100%;
+  }
+
+  .input__section form {
+    margin: 0px 30px 5px 30px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .item {
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid #fbe7c6;
+    padding: 0px 30px;
+  }
+
+  .close {
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    margin: 8px 15px;
+    padding: 4px 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0);
+  }
 }
 

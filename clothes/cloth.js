@@ -7,15 +7,33 @@ let img_topPosition = 30;
 let newBox_leftPosition = 8;
 let newBox_topPosition = 25;
 
+
 let btn_leftPosition = 13;
 let btn_topPosition = 53;
 let linkCount = 0;
+
+if (window.innerWidth <= 600) { 
+    img_leftPosition = 5; 
+    img_topPosition = 20; 
+    btn_leftPosition = 8;
+    btn_topPosition = 38;
+}
 
 let links = JSON.parse(localStorage.getItem('links')) || []; // Load links from localStorage
 
 addingBtn.addEventListener('click', () => {
     realInput.click();
 });
+
+// 이미지를 삭제하는 함수 추가
+function deleteImage(imgElement, deleteButton) {
+    // 미리보기 컨테이너에서 이미지와 삭제 버튼을 제거합니다.
+    previewImageContainer.removeChild(imgElement);
+    previewImageContainer.removeChild(deleteButton);
+
+    // 이미지를 제거한 후 로컬 스토리지를 업데이트합니다.
+    saveToLocalStorage();
+}
 
 realInput.addEventListener("change", (e) => {
     const reader = new FileReader();
@@ -35,16 +53,40 @@ realInput.addEventListener("change", (e) => {
         newBox.style.top = newBox_topPosition + '%';
         newBox.style.left = newBox_leftPosition + '%';
 
+        // 이미지마다 삭제 버튼을 추가합니다.
+        var deleteButton = document.createElement("button");
+        deleteButton.innerText = "Delete";
+        deleteButton.style.position = 'absolute';
+        deleteButton.style.top = btn_topPosition - 5 + '%';
+        deleteButton.style.left = btn_leftPosition + '%';
+
+        deleteButton.onclick = function () {
+            // 삭제 버튼을 클릭하면 해당 이미지와 버튼을 삭제합니다.
+            deleteImage(img, deleteButton);
+        };
+
         previewImageContainer.appendChild(img);
         previewImageContainer.appendChild(newBox);
+        previewImageContainer.appendChild(deleteButton);
 
-        img_leftPosition += 20;
+        if (window.innerWidth <= 420) {
+            img_leftPosition += 45;
 
-        if (img_leftPosition + 20 > 100) {
-            img_leftPosition = 10;
-            img_topPosition += 35;
+            if (img_leftPosition + 45 > 100) {
+                img_leftPosition = 5;
+                img_topPosition += 30;
+            }
         }
 
+        else{
+            img_leftPosition += 20;
+
+            if (img_leftPosition + 20 > 100) {
+                img_leftPosition = 10;
+                img_topPosition += 35;
+            }
+        }
+        
         saveToLocalStorage(); // Save to local storage after adding an image
     };
 });
@@ -70,12 +112,32 @@ function addLink() {
         deleteButton.style.top = btn_topPosition + 5 + '%';
         deleteButton.style.left = btn_leftPosition + '%';
 
-        // Remove the following line to prevent redefining newBox
-        // var newBox = document.createElement("div");
+        deleteButton.onclick = function () {
+            // 링크 버튼 제거
+            previewImageContainer.removeChild(newbutton);
 
-        document.body.appendChild(newbutton);
-        document.body.appendChild(deleteButton);
+            // 삭제 버튼 제거
+            previewImageContainer.removeChild(deleteButton);
 
+            // links 배열에서 해당 데이터 제거
+            const linkindex = links.findIndex(link => link.userInput === userInput);
+            if (linkindex !== -1) {
+                links.splice(linkindex, 1);
+                saveToLocalStorage(); // 링크를 제거한 후 로컬 스토리지에 저장
+            }
+        };
+
+        previewImageContainer.appendChild(newbutton);
+        previewImageContainer.appendChild(deleteButton);
+
+        if (window.innerWidth <= 420) {
+            btn_leftPosition += 27;
+
+            if (btn_leftPosition > 80) {
+                btn_leftPosition = 8;
+                btn_topPosition += 30;
+            }
+        }
         btn_leftPosition += 20;
 
         if (btn_leftPosition > 80) {
@@ -86,8 +148,6 @@ function addLink() {
         linkCount++;
         newbutton.classList.add("newbutton-style");
         deleteButton.classList.add("deleteButton-style");
-        // Remove the following line to prevent redefining newBox
-        // newBox.classList.add("newBox-style");
 
         // Store link data
         links.push({
@@ -115,6 +175,23 @@ function loadFromLocalStorage() {
 
     if (savedImages) {
         previewImageContainer.innerHTML = savedImages;
+
+        // 로드된 각 이미지에 대해 삭제 버튼 추가
+        previewImageContainer.querySelectorAll('img').forEach(img => {
+            var deleteButton = document.createElement("button");
+            deleteButton.innerText = "Delete";
+            deleteButton.style.position = 'absolute';
+            deleteButton.style.top = btn_topPosition - 5 + '%';
+            deleteButton.style.left = btn_leftPosition + '%';
+            deleteButton.style.opacity = '0.1';
+
+            deleteButton.onclick = function () {
+                // 삭제 버튼을 클릭하면 해당 이미지와 버튼을 삭제합니다.
+                deleteImage(img, deleteButton);
+            };
+
+            previewImageContainer.appendChild(deleteButton);
+        });
     }
 
     if (savedLinks) {
@@ -137,13 +214,11 @@ function loadFromLocalStorage() {
             deleteButton.style.top = link.deleteButtonTop;
             deleteButton.style.left = link.deleteButtonLeft;
 
-            document.body.appendChild(newbutton);
-            document.body.appendChild(deleteButton);
+            previewImageContainer.appendChild(newbutton);
+            previewImageContainer.appendChild(deleteButton);
 
             newbutton.classList.add("newbutton-style");
             deleteButton.classList.add("deleteButton-style");
-            // Remove the following line to prevent redefining newBox
-            // newBox.classList.add("newBox-style");
         });
     }
 }

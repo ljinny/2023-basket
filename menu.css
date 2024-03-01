@@ -1,3 +1,25 @@
+.header{
+    position: absolute;
+    top: 30px;
+    left: 5%;
+    padding: 10px; 
+  }
+
+h1{
+    font-size: 60px;
+    color: #4A8059;
+    font-family: serif;
+}
+
+.line {
+    position: absolute;
+    top: 170px; /* 헤더 아래에 가로선 생성 */
+    width: 90%;
+    height: 0.5px;
+    background-color: black;
+    margin-left: 5%;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -49,4 +71,19 @@ nav ul {
     margin-right: 0px;
 }
 
+.img-container {
+    text-align: center;
+    margin-top: 350px; /* Adjust the margin as needed */
+}
 
+.img-container a {
+    display: inline-block;
+    margin: 0 50px; /* Adjust the margin between images */
+}
+
+.img-container img {
+    width: 200px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+    display: block;
+    margin: 0 auto;
+}

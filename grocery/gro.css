@@ -140,3 +140,18 @@ button {
     font-weight: lighter;
     cursor: pointer;
   }
+
+  @media only screen and (max-width: 600px) {
+    .header {
+        top: 50px;
+        left: 5%;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .line {
+        top: 140px;
+    }
+}

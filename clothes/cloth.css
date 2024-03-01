@@ -70,3 +70,36 @@ h1{
     height: 200px;
     background-color: #FFF8ED;
   }
+
+  @media only screen and (max-width: 420px) {
+    .header {
+        top:6.5%;
+        left: 5%;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .line {
+        top: 18%;
+    }
+
+    .Adding-btn {
+        top: 9%;
+        right: 5%;
+    }
+
+    #add-link-button {
+        top: 13%;
+        right: 5%;
+    }
+      
+    #image_container img {
+      width: calc(50% - 20px);
+      max-height: 150px;
+      object-fit: cover; /* 이미지가 지정된 크기에 맞게 조절되도록 합니다. */
+    }
+}
+
+
