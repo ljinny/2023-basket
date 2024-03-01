@@ -16,7 +16,7 @@ if (window.innerWidth <= 420) {
     img_leftPosition = 5; 
     img_topPosition = 23; 
     btn_leftPosition = 8;
-    btn_topPosition = 45;
+    btn_topPosition = 46;
 }
 
 let links = JSON.parse(localStorage.getItem('links')) || []; // Load links from localStorage
@@ -74,7 +74,7 @@ realInput.addEventListener("change", (e) => {
 
             if (img_leftPosition + 45 > 100) {
                 img_leftPosition = 5;
-                img_topPosition += 37;
+                img_topPosition += 35;
             }
         }
 
@@ -135,7 +135,7 @@ function addLink() {
 
             if (btn_leftPosition > 80) {
                 btn_leftPosition = 8;
-                btn_topPosition += 30;
+                btn_topPosition += 32;
             }
         }
         else{
