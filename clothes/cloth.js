@@ -14,9 +14,9 @@ let linkCount = 0;
 
 if (window.innerWidth <= 420) { 
     img_leftPosition = 5; 
-    img_topPosition = 20; 
+    img_topPosition = 23; 
     btn_leftPosition = 8;
-    btn_topPosition = 38;
+    btn_topPosition = 40;
 }
 
 let links = JSON.parse(localStorage.getItem('links')) || []; // Load links from localStorage
@@ -74,7 +74,7 @@ realInput.addEventListener("change", (e) => {
 
             if (img_leftPosition + 45 > 100) {
                 img_leftPosition = 5;
-                img_topPosition += 30;
+                img_topPosition += 35;
             }
         }
 
