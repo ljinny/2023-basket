@@ -114,25 +114,30 @@ const paintMealPlan = () => {
     }
 
     // 데이터 행 생성
-    allMealPlan.forEach((meal, index) => {
+    const days = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
+    days.forEach((day, index) => {
         const row = mealTable.insertRow(index + 1);
+        const cell0 = row.insertCell(0);
+        cell0.innerText = day;
 
-        for (let i = 0; i < headerCells.length; i++) {
+        for (let i = 1; i < headerCells.length; i++) {
             const cell = row.insertCell(i);
+            cell.contentEditable = true;
+            cell.style.width = '100px';
+            cell.innerText = ''; // 각 셀을 비워둠
+        }
+    });
 
-            // 'Day' 열을 제외하고 모든 셀에 contenteditable 속성 적용
-            if (i !== 0) {
-                cell.contentEditable = true;
-                cell.innerText = meal[headerCells[i].toLowerCase()];
-            } else {
-                cell.innerText = meal.day;
-            }
-            cell.style.width = '100px'; 
+    // 저장된 데이터로 셀 내용 채우기
+    allMealPlan.forEach(meal => {
+        const row = Array.from(mealTable.rows).find(row => row.cells[0].innerText === meal.day);
+        if (row) {
+            row.cells[1].innerText = meal.breakfast;
+            row.cells[2].innerText = meal.lunch;
+            row.cells[3].innerText = meal.dinner;
         }
     });
 };
-
-
 
 const init = () => {
     groInputElem.addEventListener('keypress', (e) => {
