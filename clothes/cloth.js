@@ -16,7 +16,7 @@ if (window.innerWidth <= 420) {
     img_leftPosition = 5; 
     img_topPosition = 23; 
     btn_leftPosition = 8;
-    btn_topPosition = 40;
+    btn_topPosition = 60;
 }
 
 let links = JSON.parse(localStorage.getItem('links')) || []; // Load links from localStorage
