@@ -135,7 +135,7 @@ function addLink() {
 
             if (btn_leftPosition > 80) {
                 btn_leftPosition = 8;
-                btn_topPosition += 32;
+                btn_topPosition += 35;
             }
         }
         else{
