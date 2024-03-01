@@ -12,7 +12,7 @@ let btn_leftPosition = 13;
 let btn_topPosition = 53;
 let linkCount = 0;
 
-if (window.innerWidth <= 600) { 
+if (window.innerWidth <= 420) { 
     img_leftPosition = 5; 
     img_topPosition = 20; 
     btn_leftPosition = 8;
@@ -131,19 +131,22 @@ function addLink() {
         previewImageContainer.appendChild(deleteButton);
 
         if (window.innerWidth <= 420) {
-            btn_leftPosition += 27;
+            btn_leftPosition += 45;
 
             if (btn_leftPosition > 80) {
                 btn_leftPosition = 8;
                 btn_topPosition += 30;
             }
         }
-        btn_leftPosition += 20;
+        else{
+            btn_leftPosition += 20;
 
-        if (btn_leftPosition > 80) {
-            btn_leftPosition = 13;
-            btn_topPosition += 35;
+            if (btn_leftPosition > 80) {
+                btn_leftPosition = 13;
+                btn_topPosition += 35;
+            }
         }
+        
 
         linkCount++;
         newbutton.classList.add("newbutton-style");
